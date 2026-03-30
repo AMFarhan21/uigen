@@ -42,8 +42,20 @@ export function MainContent({ user, project }: MainContentProps) {
             <ResizablePanel defaultSize={35} minSize={25} maxSize={50}>
               <div className="h-full flex flex-col bg-white">
                 {/* Chat Header */}
-                <div className="h-14 flex items-center px-6 border-b border-neutral-200/60">
-                  <h1 className="text-lg font-semibold text-neutral-900 tracking-tight">React Component Generator</h1>
+                <div className="h-16 flex items-center px-6 border-b border-neutral-200/60 bg-gradient-to-r from-[#7c3aed]/5 via-transparent to-[#2563eb]/5">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#7c3aed] to-[#2563eb] flex items-center justify-center shadow-md">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+                        <path d="M12 8V4H8"></path>
+                        <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+                        <path d="M2 14h2"></path>
+                        <path d="M20 14h2"></path>
+                        <path d="M15 13v2"></path>
+                        <path d="M9 13v2"></path>
+                      </svg>
+                    </div>
+                    <h1 className="text-lg font-bold bg-gradient-to-r from-[#7c3aed] to-[#2563eb] bg-clip-text text-transparent">UIGen</h1>
+                  </div>
                 </div>
 
                 {/* Chat Content */}
@@ -59,16 +71,16 @@ export function MainContent({ user, project }: MainContentProps) {
             <ResizablePanel defaultSize={65}>
               <div className="h-full flex flex-col bg-white">
                 {/* Top Bar */}
-                <div className="h-14 border-b border-neutral-200/60 px-6 flex items-center justify-between bg-neutral-50/50">
+                <div className="h-16 border-b border-neutral-200/60 px-6 flex items-center justify-between bg-gradient-to-r from-[#7c3aed]/3 via-transparent to-[#2563eb]/3">
                   <Tabs
                     value={activeView}
                     onValueChange={(v) =>
                       setActiveView(v as "preview" | "code")
                     }
                   >
-                    <TabsList className="bg-white/60 border border-neutral-200/60 p-0.5 h-9 shadow-sm">
-                      <TabsTrigger value="preview" className="data-[state=active]:bg-white data-[state=active]:text-neutral-900 data-[state=active]:shadow-sm text-neutral-600 px-4 py-1.5 text-sm font-medium transition-all">Preview</TabsTrigger>
-                      <TabsTrigger value="code" className="data-[state=active]:bg-white data-[state=active]:text-neutral-900 data-[state=active]:shadow-sm text-neutral-600 px-4 py-1.5 text-sm font-medium transition-all">Code</TabsTrigger>
+                    <TabsList className="bg-white/80 backdrop-blur-sm border border-neutral-200/60 p-1 h-10 rounded-xl shadow-sm">
+                      <TabsTrigger value="preview" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#7c3aed] data-[state=active]:to-[#2563eb] data-[state=active]:text-white data-[state=active]:shadow-md data-[state=active]:shadow-[#7c3aed]/20 text-neutral-600 px-6 py-2 text-sm font-semibold rounded-lg transition-all duration-200">Preview</TabsTrigger>
+                      <TabsTrigger value="code" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#7c3aed] data-[state=active]:to-[#2563eb] data-[state=active]:text-white data-[state=active]:shadow-md data-[state=active]:shadow-[#7c3aed]/20 text-neutral-600 px-6 py-2 text-sm font-semibold rounded-lg transition-all duration-200">Code</TabsTrigger>
                     </TabsList>
                   </Tabs>
                   <HeaderActions user={user} projectId={project?.id} />
